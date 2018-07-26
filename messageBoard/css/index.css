@@ -1,0 +1,120 @@
+.main{
+    width: 1000px;
+    height: auto;
+    margin:  0 auto;
+
+}
+.limit {
+    display: inline-block;
+    width:700px;
+    height: 500px;
+    position: relative;
+    vertical-align: top;
+}
+
+.board {
+    display: inline-block;
+    -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+    width: 230px;
+    height: 300px;
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+    vertical-align: top;
+    margin-top: 20px;
+}
+
+.user-text {
+    width: 230px;
+    height: 230px;
+    background-color: #fff;
+    color: #000;
+    text-indent: 2em;
+    resize: none;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+
+}
+
+.paste {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.paper {
+    width: 310px;
+    height: 236px;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+.paper:hover{
+    z-index: 999;
+}
+
+.close {
+    display: block;
+    background: url(../images/close.png) no-repeat;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+
+    -webkit-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.paper-content{
+    cursor: move;
+}
+
+.message-content {
+    padding: 10px 20px;
+    width: 200px;
+    height: 160px;
+    text-indent: 2em;
+    word-break: break-all;
+}
+
+.message-date {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1em;
+    padding: 4px 10px;
+}
+.message-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 4px 10px;
+    margin-top: 2px;
+}
+
+.clearFix:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}

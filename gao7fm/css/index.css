@@ -1,0 +1,299 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: "Microsoft YaHei UI", Arial;
+    color: #333;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    padding: 23px 0 22px;
+    background-color: #fff;
+}
+
+.h-content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: inline-block;
+    width: 310px;
+    height: 40px;
+    background-image: url(http://placehold.it/310x40/f00/ff0/);
+
+}
+
+.nav {
+    display: inline-block;
+    list-style: none;
+    line-height: 1em;
+    height: 30px;
+    padding: 5px 0;
+    margin: 0;
+    float: right;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 30px;
+    border-right: 1px solid #ccc;
+}
+
+.nav li:last-child {
+    border: none;
+}
+
+.main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery {
+    margin-bottom: 20px;
+}
+
+.main-img {
+    display: block;
+    width: 1000px;
+    height: 350px;
+    background-image: url(http://placehold.it/1000x350/f00/ff0/);
+    margin-top: 20px;
+}
+
+.fa-lg {
+    margin-right: 10px;
+    color: #f30000;
+}
+
+.main-content {
+    width: 100%;
+    position: relative;
+}
+
+.content-list {
+    width: 660px;
+    height: auto;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+.list li {
+    background: #fff;
+    float: left;
+    width: 290px;
+    height: 130px;
+    padding: 10px;
+    margin: 0 20px 20px 0;
+}
+
+.list-left {
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://placehold.it/130x130/f00/ff0/);
+    float: left;
+}
+
+.list-left:hover:before {
+    display: block;
+    content: "";
+    background-image: url(../images/ll-bg.png);
+    width: 130px;
+    height: 130px;
+}
+
+.list-right {
+    display: block;
+    width: 150px;
+    height: 130px;
+    float: right;
+}
+
+.list-title {
+    max-height: 52px;
+    padding: 8px 0 0 0;
+    font-size: 16px;
+    line-height: 26px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+}
+
+.list-content {
+    max-height: 60px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wx {
+    width: 310px;
+    margin-bottom: 20px;
+    padding: 15px;
+    height: 130px;
+    background-color: #fff;
+
+}
+
+.more {
+    display: block;
+    width: 640px;
+    height: 40px;
+    text-align: center;
+    background: #ffffff;
+    float: left;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.more:hover{
+    cursor: pointer;
+}
+
+.top {
+    width: 340px;
+    background-color: #fff;
+    max-height: 720px;
+    padding-top: 20px;
+    height: auto;
+}
+
+div {
+    display: block;
+}
+
+.clearFix:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.top-title {
+    width: 100%;
+    height: 25px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #383939;
+    line-height: 24px;
+    box-sizing: border-box;
+}
+
+.top-title h2:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #e9443e;
+    content: "";
+}
+
+.top-title h2 {
+    position: relative;
+    padding-left: 14px;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+.code {
+    margin-right: 24px;
+    float: left;
+}
+
+.top ul li {
+    height: 50px;
+    padding: 0 10px 20px 0;
+    position: relative;
+}
+
+.top-img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #fff url(http://placehold.it/50x50/f00/ff0) 0 0 no-repeat;
+}
+
+.top-img:hover:before {
+    display: inline-block;
+    content: "";
+    background-image: url(../images/rl-bg.png);
+    width: 50px;
+    height: 50px;
+}
+
+.welcome {
+    line-height: 30px;
+    overflow: hidden;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 150px;
+}
+
+
+.top-index {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #383939;
+    float: left;
+}
+
+.div-shadow {
+    box-shadow: 0 0 2px #e7e7e7, 0 0 2px #e7e7e7, 0 0 2px #e7e7e7, 0 0 2px #e7e7e7;
+}
+
+.player {
+    width: 210px;
+}
+
+.player a p:first-child {
+    font-size: 16px;
+    line-height: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.player a p:last-child {
+    font-size: 14px;
+    color: #888;
+    line-height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

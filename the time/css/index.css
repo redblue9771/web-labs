@@ -1,0 +1,1199 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", Verdana, Tahoma;
+    background: url("../images/body-bg.png");
+    line-height: 24px;
+    font-size: 16px;
+    color: #333;
+}
+
+div {
+    overflow: hidden;
+}
+
+img {
+    border: 0;
+}
+
+h1:before {
+    width: 5px;
+    height: 28px;
+    background: #ff7c12;
+    content: "";
+    margin: 0 8px 0 0;
+    float: left;
+}
+
+h1 {
+    line-height: 28px;
+    color: #ff7c12;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+h2:before {
+    content: url("../images/title-left.png");
+    width: 15px;
+    height: 48px;
+    float: left;
+    margin: 0 14px 0 0;
+}
+
+h2 {
+    height: 48px;
+    background: #c9dff4;
+    line-height: 48px;
+    color: #0076c6;
+    font-size: 28px;
+    margin: 0 0 22px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+h3:before {
+    width: 5px;
+    height: 22px;
+    background: #ff7c12;
+    content: "";
+    margin: 0 8px 0 0;
+    float: left;
+}
+
+h3 {
+    line-height: 22px;
+    color: #ff7c12;
+    font-size: 20px;
+    margin: 0 0 14px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 2em;
+    margin: 0;
+}
+
+.format1 {
+    margin-bottom: 40px;
+}
+
+.format2 {
+    margin: 0 16px 22px 16px;
+}
+
+.format3 {
+    margin: 22px 16px;
+}
+
+.format4 {
+    padding: 0 16px;
+}
+
+.back-img {
+    width: 100%;
+    height: 875px;
+    background: url("../images/bg.png") repeat-x center 0;
+    position: absolute;
+}
+
+.main {
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    top: 436px;
+}
+
+.preface {
+    width: 697px;
+    height: 48px;
+    padding: 29px 29px 29px 46px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 0 auto 43px auto;
+    text-indent: 0;
+}
+
+.preface:before {
+    content: url("../images/foreword.png");
+    width: 96px;
+    margin-right: 15px;
+    float: left;
+}
+
+.main-body {
+    height: 100%;
+    padding: 12px;
+    background: #fff;
+}
+
+.module-1-images {
+    width: 1000px;
+    height: 328px;
+    position: relative;
+}
+
+.module-1-images img {
+    width: 1000px;
+    height: 300px;
+}
+
+button {
+    margin: 0;
+    border: 0;
+}
+
+.prev {
+    width: 44px;
+    height: 60px;
+    background: url("../images/prev.png");
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+
+.prev:hover {
+    background: url("../images/prev-hover.png");
+}
+
+.next {
+    width: 44px;
+    height: 60px;
+    position: absolute;
+    background: url("../images/next.png");
+    right: 0;
+    top: 120px;
+}
+
+.next:hover {
+    background: url("../images/next-hover.png");
+}
+
+.module-1-control {
+    margin-bottom: 16px;
+}
+
+.image-1 {
+    width: 199px;
+    height: 4px;
+    background: #c9dff4;
+    float: left;
+    margin-right: 1px;
+}
+
+.image-1:first-child {
+    background: #0076c6;
+    width: 200px;
+}
+
+.image-1:last-child {
+    margin-right: 0;
+}
+
+.textarea-2-1 {
+    text-overflow: ellipsis;
+    text-indent: 2em;
+    font-size: 14px;
+}
+
+.left-2-1 {
+    width: 500px;
+    height: 326px;
+    float: left;
+    margin: 0 28px 0 0;
+}
+
+.left-2-1 img {
+    width: 500px;
+    height: 326px;
+}
+
+.right-2-1 {
+    width: 440px;
+    height: 199px;
+    float: right;
+    margin: 0 0 22px 0;
+}
+
+.right-2-2 {
+    width: 440px;
+    height: 105px;
+    position: relative;
+}
+
+.right-2-2 a:first-child {
+    display: block;
+    width: 210px;
+    height: 105px;
+    float: left;
+    position: relative;
+}
+
+.right-2-2 a:last-child {
+    display: block;
+    width: 210px;
+    height: 105px;
+    float: right;
+    position: relative;
+}
+
+.right-2-2 img {
+    width: 210px;
+    height: 105px;
+}
+
+.right-2-2 span {
+    width: 170px;
+    height: 30px;
+    background: rgba(1, 1, 1, .7);
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 20px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.recommend {
+    height: 80px;
+    background: #d9eeff;
+    padding: 35px 16px;
+}
+
+.recommend img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    float: left;
+}
+
+.recommend dl {
+    width: 300px;
+    margin: 0 0 0 20px;
+    float: left;
+    font-size: 14px;
+}
+
+.recommend dt {
+    color: #0076c6;
+}
+
+.recommend dd:nth-child(2n) {
+    float: left;
+    margin: 0;
+    width: 130px;
+}
+
+.buttons {
+    width: 270px;
+    height: 80px;
+    float: right;
+}
+
+.buttons a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 20px;
+    margin: 0 0 0 10px;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+}
+
+.buttons a:first-child {
+    background: url("../images/button-1.png");
+}
+
+.buttons a:nth-child(2) {
+    background: url("../images/button-2.png")
+}
+
+.buttons a:last-child {
+    background: url("../images/button-3.png")
+}
+
+.buttons a:first-child:hover {
+    background: url("../images/button-11.png");
+}
+
+.buttons a:nth-child(2):hover {
+    background: url("../images/button-22.png")
+}
+
+.buttons a:last-child:hover {
+    background: url("../images/button-33.png")
+}
+
+.left-2-2 {
+    width: 440px;
+    height: 326px;
+    margin: 0 28px 0 0;
+    float: left;
+}
+
+.textarea-2-2 {
+    height: 268px;
+    text-overflow: ellipsis;
+    text-indent: 2em;
+    font-size: 14px;
+}
+
+.left-2-2 a {
+    display: block;
+    height: 22px;
+    background: #43933f;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.left-2-2 a:before {
+    content: url("../images/link.png");
+    margin: 0 10px;
+}
+
+.left-2-2 a:link {
+    text-decoration: none;
+}
+
+.left-2-2 a:hover {
+    background: #52a64d;
+}
+
+.right-2-3 img {
+    width: 500px;
+    height: 326px;
+}
+
+.dividing {
+    border-bottom: 1px #eee solid;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+}
+
+.dividing:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.left-3 {
+    margin: 0 16px;
+    float: left;
+}
+
+.left-3 img {
+    width: 220px;
+    height: 370px;
+}
+
+.right-3 {
+    width: 232px;
+    height: 370px;
+    margin: 0 16px 0 0;
+    float: left;
+}
+
+.right-3 a {
+    display: block;
+    height: 22px;
+    background: #43933f;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.right-3 a:before {
+    content: url("../images/link.png");
+    margin: 0 10px;
+}
+
+.right-3 a:link {
+    text-decoration: none;
+}
+
+.right-3 a:hover {
+    background: #52a64d;
+}
+
+.textarea-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 2em;
+    font-size: 14px;
+    height: 288px;
+}
+
+.left-4-1 {
+    width: 544px;
+    height: 320px;
+    margin: 0 30px 0 0;
+    float: left;
+}
+
+.right-4-1 {
+    position: relative;
+}
+
+.right-4-1 a:first-child {
+    display: block;
+    margin: 42px 24px 28px 0;
+}
+
+.right-4-1 a:nth-child(2) {
+    display: block;
+}
+
+.right-4-1 a:last-child {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 106px;
+}
+
+.right-4-1 a:first-child img {
+    width: 160px;
+    height: 105px;
+}
+
+.right-4-1 a:nth-child(2) img {
+    width: 160px;
+    height: 105px;
+}
+
+.right-4-1 a:last-child img {
+    width: 210px;
+    height: 138px;
+}
+
+.format2-2 {
+    margin: 0 16px 0 16px;
+    float: left;
+    height: 350px;
+}
+
+.left-4-2 {
+    width: 394px;
+    position: relative;
+    float: left;
+}
+
+.left-4-2 a:first-child {
+    display: block;
+    margin: 42px 24px 28px 0;
+}
+
+.left-4-2 a:nth-child(2) {
+    display: block;
+}
+
+.left-4-2 a:last-child {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 106px;
+}
+
+.left-4-2 a:first-child img {
+    width: 160px;
+    height: 105px;
+}
+
+.left-4-2 a:nth-child(2) img {
+    width: 160px;
+    height: 105px;
+}
+
+.left-4-2 a:last-child img {
+    width: 210px;
+    height: 138px;
+}
+
+.right-4-2 {
+    width: 544px;
+    height: 320px;
+    margin: 0 0 0 30px;
+    float: right;
+}
+
+.textarea-4-1 {
+    font-size: 14px;
+}
+
+.left-5 {
+    width: 468px;
+    float: left;
+}
+
+.left-5 img {
+    width: 210px;
+    height: 138px;
+}
+
+.right-5 {
+    width: 468px;
+}
+
+.right-5 img {
+    width: 210px;
+    height: 138px;
+}
+
+.module-5 a {
+    display: block;
+    width: 210px;
+    height: 138px;
+    float: left;
+}
+
+.textarea-5 {
+    width: 238px;
+    height: 120px;
+    float: right;
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.textarea-5 p {
+    text-indent: 0;
+}
+
+.module-5 span:before {
+    width: 17px;
+    height: 17px;
+    content: url("../images/clock.png");
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.module-5 span {
+    display: block;
+    line-height: 17px;
+    font-size: 14px;
+    color: #888;
+    width: 238px;
+    float: right;
+}
+
+.module-6 {
+    margin-bottom: 30px;
+}
+
+.textlist {
+    float: left;
+    margin-top: -10px;
+}
+
+.textlist a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+.textlist a:visited {
+    color: #333;
+}
+
+.textlist a:hover {
+    color: #f00;
+}
+
+.textlist a:active {
+    color: #333;
+}
+
+.textlist dl {
+    width: 468px;
+    font-size: 14px;
+    margin: 0 16px;
+    line-height: 36px;
+}
+
+.textlist dt {
+    width: 360px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 20px 0 0;
+}
+
+.textlist dd {
+    width: 78px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #888;
+}
+
+.module-7 {
+    position: relative;
+}
+
+.module-7 h2 {
+    width: 95%;
+}
+
+.other {
+    width: 5%;
+    background: #c9dff4;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.other a:link {
+    color: #0076c6;
+    text-decoration: none;
+}
+
+.other a:visited {
+    color: #0076c6;
+}
+
+.other a:hover {
+    color: #f00;
+}
+
+.other a:active {
+    color: #0076c6;
+}
+
+.image-7 {
+    display: block;
+    width: 210px;
+    text-align: center;
+    margin-right: 42px;
+    float: left;
+}
+
+.image-7:img {
+    width: 210px;
+    height: 138px;
+}
+
+.image-7:last-child {
+    margin-right: 0;
+}
+
+h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.image-7 a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+.image-7 a:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+
+.image-8 {
+    width: 300px;
+    text-align: center;
+    margin-right: 34px;
+    float: left;
+}
+
+.image-8:img {
+    width: 300px;
+    height: 138px;
+}
+
+.image-8:last-child {
+    margin-right: 0;
+}
+
+.image-8 a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+.image-8 a:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+
+.list-9 {
+    width: 300px;
+    margin-right: 34px;
+    float: left;
+}
+
+.list-9:last-child {
+    margin-right: 0;
+}
+
+.list-9 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    float: left;
+}
+
+.list-9 dl {
+    float: right;
+    position: relative;
+    margin: 0;
+}
+
+.list-9 dl dt {
+    font-size: 20px;
+}
+
+.list-9 dl dt b span {
+    color: #f6670b;
+    position: absolute;
+    right: 0;
+}
+
+.list-9 dl dd {
+    margin: 0;
+}
+
+.list-9 dl dd a {
+    display: block;
+    width: 66px;
+    height: 28px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 28px;
+    margin-right: 4px;
+    margin-top: 16px;
+    float: left;
+}
+
+.list-9 dl dd a:last-child {
+    margin-right: 0;
+}
+
+.list-9 dl dd a:first-child {
+    border: 1px solid #43933f;
+}
+
+.list-9 dl dd a:first-child:link {
+    color: #43933f;
+    text-decoration: none;
+}
+
+.list-9 dl dd a:first-child:hover {
+    color: #fff;
+    background: #43933f;
+}
+
+.list-9 dl dd a:nth-child(2) {
+    border: 1px solid #379be9;
+}
+
+.list-9 dl dd a:nth-child(2):link {
+    color: #379be9;
+    text-decoration: none;
+}
+
+.list-9 dl dd a:nth-child(2):hover {
+    color: #fff;
+    background: #379be9;
+}
+
+.list-9 dl dd a:last-child {
+    border: 1px solid #ff4040;
+}
+
+.list-9 dl dd a:last-child:link {
+    color: #ff4040;
+    text-decoration: none;
+}
+
+.list-9 dl dd a:last-child:hover {
+    color: #fff;
+    background: #ff4040;
+}
+
+.left-10 {
+    float: left;
+}
+
+.left-10 a {
+    display: block;
+    width: 250px;
+    height: 180px;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    background: url("../images/pk-red.png");
+    line-height: 180px;
+    text-align: center;
+}
+
+.left-10 a:hover {
+    text-shadow: 0 0 5px #f00;
+    background: url("../images/pk-red-1.png");
+}
+
+.mid-10 {
+    margin: 0 24px;
+    float: left;
+    position: relative;
+}
+
+.mid-10 a {
+    display: block;
+    width: 420px;
+    height: 180px;
+}
+
+.mid-10 img {
+    width: 420px;
+    height: 180px;
+}
+
+.mid-10 span {
+    width: 400px;
+    height: 30px;
+    color: #fff;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(1, 1, 1, 0.7);
+    line-height: 30px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.right-10 a {
+    display: block;
+    width: 250px;
+    height: 180px;
+    background: url("../images/pk-blue.png");
+    line-height: 180px;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.right-10 a:hover {
+    text-shadow: 0 0 5px #00f;
+    background: url("../images/pk-blue-1.png");
+}
+
+.bottom-10 {
+    margin-top: 40px;
+}
+
+.bottom-10 span:first-child {
+    width: 50px;
+    color: #ff4040;
+    line-height: 22px;
+    float: left;
+    margin: 0 10px 0 8px;
+}
+
+.bottom-10 span:first-child:before {
+    content: url("../images/hand-red.png");
+    float: left;
+    margin-right: 4px;
+}
+
+.bottom-10 span:last-child {
+    line-height: 22px;
+    color: #379be9;
+}
+
+.bottom-10 span:last-child:before {
+    content: url("../images/hand-blue.png");
+    margin-right: 4px;
+}
+
+.pk {
+    width: 834px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    color: #ffffff;
+    line-height: 22px;
+    text-align: center;
+}
+
+.pk p:first-child {
+    display: block;
+    width: 20%;
+    height: 22px;
+    background: url("../images/bar-red.png");
+    border-radius: 11px 0 0 11px;
+    float: left;
+}
+
+.pk p:last-child {
+    display: block;
+    width: 80%;
+    height: 22px;
+    background: url("../images/bar-blue.png");
+    border-radius: 0 11px 11px 0;
+}
+
+.pk i {
+    background: url("../images/bar-light.png");
+    position: absolute;
+    left: 14%;
+    width: 103px;
+    height: 22px;
+}
+
+.image-11 {
+    width: 300px;
+    margin-right: 34px;
+    float: left;
+}
+
+.image-11 a {
+    position: relative;
+    display: block;
+    width: 300px;
+    height: 138px;
+}
+
+.image-11 a img {
+    width: 300px;
+    height: 138px;
+}
+
+.image-11:last-child {
+    margin-right: 0;
+}
+
+.image-11 a span {
+    height: 30px;
+    width: 280px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    background: rgba(1, 1, 1, 0.7);
+}
+
+.module-11 textarea {
+    resize: none;
+    width: 100px;
+    height: 100px;
+}
+
+.module-12 {
+    font-size: 14px;
+}
+
+.module-12 h3 {
+    width: 730px;
+    float: left;
+}
+
+.module-12 span {
+    float: left;
+}
+
+.share {
+    float: right;
+}
+
+.share:after {
+    content: '';
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.share a {
+    display: block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin: 0 8px;
+}
+
+.share a:nth-child(1) {
+    background: url("../images/ic-1.png");
+}
+
+.share a:nth-child(2) {
+    background: url("../images/ic-2.png");
+}
+
+.share a:nth-child(3) {
+    background: url("../images/ic-3.png");
+}
+
+.share a:nth-child(4) {
+    background: url("../images/ic-4.png");
+}
+
+.share a:nth-child(5) {
+    margin-right: 0;
+    background: url("../images/ic-5.png");
+}
+
+.head {
+    clear: both;;
+    margin-right: 16px;
+    float: left;
+}
+
+.head img {
+    width: 60px;
+    height: 60px;
+}
+
+.right-12 {
+    float: right;
+    font-size: 14px;
+}
+
+.right-12 dl {
+    width: 892px;
+    margin: 0;
+    padding: 0;
+}
+
+.right-12 dt {
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.right-12 dd {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.right-12 i {
+    font-style: normal;
+    color: #ff5555;
+}
+
+.textarea-12 {
+    padding: 4px;
+    clear: both;
+    background: #f2f2f5;
+}
+
+.textarea-12 textarea {
+    width: 884px;
+    height: 100px;
+    resize: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.textarea-12 button {
+    width: 86px;
+    height: 33px;
+    line-height: 33px;
+    color: #fff;
+    border: 0;
+    background: #379be9;
+    font-size: 18px;
+    margin: 4px 0 0 16px;
+    float: right;
+}
+
+.textarea-12 span {
+    margin-top: 4px;
+    line-height: 33px;
+    color: #878787;
+    font-size: 14px;
+    float: right;
+}
+
+.textarea-12 button:hover {
+    background: #4baef2;
+}
+
+.textarea-12 span i {
+    color: #878787;
+}
+
+.bottom-12 {
+    width: 948px;
+    background: #f2f2f5;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-top: 240px;
+}
+
+.bar {
+    position: fixed;
+    margin-left: 1000px;
+    bottom: 6%;
+}
+
+.bar ul li {
+    list-style: none;
+    margin: 0 0 8px 0;
+    width: 144px;
+    height: 44px;
+    color: #0076c6;
+    background: #c9dff4;
+    line-height: 44px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.bar ul li:hover {
+    color: #fff;
+    background: #0076c6;
+}
+
+.barHint {
+    background-color: #0076c6 !important;
+    color: #fff !important;
+}
+

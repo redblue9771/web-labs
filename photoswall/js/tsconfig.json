@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+  "iamges":{
+    "file-name":"img",
+    "file-url":"../img-1.jpg"
+  }
+}

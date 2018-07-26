@@ -1,0 +1,240 @@
+$(function () {
+    initCommentBoard('.comment-body');   //初始化留言板
+    initCommentList('.comment-body');    //从接口获取留言列表
+});
+
+/**
+ 获取留言内容
+ */
+function initCommentList(tag) {
+    $.ajax({
+        url: "index.json",
+        dataType: 'json',
+        type: 'get',
+        data: { },
+        success: function (data) {
+            console.log(data);
+            if (data.ResultCode === "0") {
+                var cur_data;
+                var commentListHtml;
+                var cListDate;
+                if(data.Data.length > 0){
+                    for (var i = 0; i < data.Data.length; i++) {  //遍历获取的留言数据
+                        cur_data = data.Data[i];
+                        cListDate = cur_data.CreateDate;
+                        commentListHtml = '<li><p>' + cur_data.CommentBody + '</p><span><b>' + cur_data.UserName + '</b>' + cListDate + '</span><i class="com-close"></i></li>';
+                        $(tag + ' ul').append(commentListHtml);   //添加到目标快内
+                    }
+                    renderComment(tag, $(tag + ' li:not(.comment-empty)'));  //对获取到的留言进行渲染
+                }else{
+                    $(tag + ' li.comment-empty').css({ top: '0px', left: '0px' }).fadeIn();  //当没有数据时，显示默认快
+                }
+            } else {
+                $(tag + ' li.comment-empty').css({ top: '0px', left: '0px' }).fadeIn();
+                console.log(data.ResultMessage);
+            }
+        }
+    });
+}
+
+/**
+ 发布留言
+ */
+function initCommentBoard(tag) {
+    var $successFlag = true;
+    $(tag).ready(function () {
+        $('.comment-form-button').click(function () {    /*提交留言*/
+            if ($(tag + ' li').length > 30) {
+                alert('太多了！按F5刷新一下吧╮(╯_╰)╭');
+                return;
+            }
+            var t = $(this);
+            var val = t.prev('textarea').val();
+            var valLength = getByteLen(val);
+            if (valLength < 20 || valLength > 400) {
+                alert('10到200字的肺腑之言才有效哦╮(╯_╰)╭');
+                return;
+            }
+            if(!$successFlag){
+                alert("您今天已评论过，请不要重复评论！");
+                t.next('.comment-form-mask').addClass('hidden'); /*隐藏遮罩层*/
+                t.prev('textarea').val('');/*清空文本域的内容*/
+                return;
+            }
+
+            t.next('.comment-form-mask').removeClass('hidden');/*显示遮罩层，防止重复提交*/
+            var CommentBody = val;
+            var UserName = "发言人";
+            var commentDate = new Date().Format("yyyy-MM-dd hh:mm:ss");
+            setTimeout(function(){
+                var commentLastHtml = '<li><p>' + CommentBody + '</p><span><b>' + UserName + '</b>' + commentDate + '</span><i class="com-close"></i></li>';
+                $(tag + ' li.comment-empty').fadeOut();/*去掉没有留言的提示*/
+                $(tag + ' ul').append(commentLastHtml);/*写入新的留言*/
+                renderComment(tag, $(tag + ' li:last'));/*渲染出最新的一条留言*/
+
+                t.next('.comment-form-mask').addClass('hidden'); /*隐藏遮罩层*/
+                t.prev('textarea').val('');/*清空文本域的内容*/
+                $successFlag = false;
+            },1000)
+            // $.ajax({/*异步提交留言内容*/
+            //     url: 'http://face3w.gao7.com/act/handler',
+            //     dataType: 'jsonp',
+            //     type: 'post',
+            //     data: 'operate=AddCommentNoUser&placeID=' + placeId + '&actID=' + activityId + '&content=' + val,
+            //     beforeSend: function () {
+            //         t.next('.comment-form-mask').removeClass('hidden');/*显示遮罩层，防止重复提交*/
+            //     },
+            //     success: function (data) {
+            //         //console.log(data);
+            //         if (data.ResultCode === "0") {
+            //             var commentDate = new Date().Format("yyyy-MM-dd hh:mm:ss");
+            //             var commentLastHtml = '<li><p>' + data.Data.CommentBody + '</p><span><b>' + data.Data.UserName + '</b>' + commentDate + '</span><i class="com-close"></i></li>';
+            //             $(tag + ' li.comment-empty').fadeOut();/*去掉没有留言的提示*/
+            //             $(tag + ' ul').append(commentLastHtml);/*写入新的留言*/
+            //             renderComment(tag, $(tag + ' li:last'));/*渲染出最新的一条留言*/
+            //         } else {
+            //             console.log(data.ResultMessage);
+            //             alert(data.ResultMessage);
+            //         }
+            //         t.next('.comment-form-mask').addClass('hidden'); /*隐藏遮罩层*/
+            //         t.prev('textarea').val('');/*清空文本域的内容*/
+            //         $successFlag = false;
+            //     }
+            // });
+        })
+    })
+}
+
+/**
+ 渲染留言板
+ */
+function renderComment(tag, items) {
+    var empty = function () {
+        if ($(tag + ' li').length <= 1) $(tag + ' li.comment-empty').css({ top: '0px', left: '0px' }).fadeToggle();
+    };
+    if ($(tag + ' li').length <= 1) empty();
+    var boardWidth = $(tag + ' ul').width();
+    var boardHeight = $(tag + ' ul').height();
+    var liWidth = $(tag + ' li').width();
+    var liHeight = $(tag + ' li').height();
+    var top = 0, left = 0, deg = 0;
+    items.each(function () {
+        /*定义随机位置*/
+        top = getRandom(boardHeight - liHeight, 1);
+        left = getRandom(boardWidth - liWidth, 1);
+        /*定义随机偏转角度（正负20度）*/
+        deg = getRandom(20, 1);
+        if (getRandom(2, 1) % 2 == 0) deg = -deg;
+        $(this).css({
+            '-webkit-transform': 'rotate(' + deg + 'deg) translateZ(0)',
+            '-moz-transform': 'rotate(' + deg + 'deg) translateZ(0)',
+            '-ms-transform': 'rotate(' + deg + 'deg)', /*IE9不支持GPU渲染*/
+            '-o-transform': 'rotate(' + deg + 'deg) translateZ(0)',
+            'transform': 'rotate(' + deg + 'deg) translateZ(0)',
+            'background-image': 'url(images/comment-board-bg' + getRandom(3, 1) + '.png)'/*定义随机背景*/
+        }).fadeIn().animate({
+            top: top + 'px',
+            left: left + 'px'
+        }).hover(function () {/*鼠标移动上去后顶层显示*/
+            $(this).css({ zIndex: 1000 });
+            move($(this), $(tag + ' ul'));/*添加拖动功能*/
+        }, function () {
+            $(this).css({ zIndex: 1 })
+        }).dblclick(function () {/*绑定双击关闭事件*/
+            $(this).fadeOut().remove();
+            empty();
+        }).find('i.com-close').click(function () {/*绑定关闭按钮事件*/
+            $(this).parent().fadeOut().remove();
+            empty();
+        })
+    })
+}
+
+/**
+ 拖曳效果
+ * @param1：要拖拽的目标对象，样式必须定义position:absolute以及宽高
+ * @param2：拖拽的外层限定区域，拖拽不能超出这个范围，样式必须定义position:relative以及宽高
+ */
+function move(tag, area) {
+    var selfWidth = tag.width();
+    var selfHeight = tag.height();
+    var areaWidth = area.width();
+    var areaHeight = area.height();
+    var _moved = false;
+    var _x, _y;
+    tag.click(function () {
+        //alert("click");
+    }).mousedown(function (e) {
+        _moved = true;
+        _x = e.pageX - parseInt(tag.css("left"));
+        _y = e.pageY - parseInt(tag.css("top"));
+        tag.fadeTo('fast', 0.7);
+    });
+    $(document).mousemove(function (e) {
+        if (_moved) {
+            var x = e.pageX - _x;
+            if (x <= 0) x = 0;
+            if (x >= areaWidth - selfWidth) x = areaWidth - selfWidth;
+            var y = e.pageY - _y;
+            if (y <= 0) y = 0;
+            if (y >= areaHeight - selfHeight) y = areaHeight - selfHeight;
+            tag.css({ top: y, left: x });
+        }
+    }).mouseup(function () {
+        _moved = false;
+        tag.fadeTo('fast', 1);
+    });
+}
+
+/**
+ 获取随机数
+ * @param1: 数字，比如要生成0-30中的任意数字，n=30
+ * @param2: 要生成几个，如果大于1个，返回结果会用,隔开
+ */
+function getRandom(n, l) {
+    var result = Math.floor(Math.random() * n + 1);
+    var i = 1;
+    while (i < l) {
+        var randNum = Math.floor(Math.random() * n + 1);
+        if (result.toString().indexOf(randNum.toString()) < 0) {
+            result += ',' + randNum;
+            i += 1;
+        }
+    }
+    return result
+}
+
+/**
+ 判断中文字符长度，汉字算2个，英文算1个
+ * */
+function getByteLen(val) {
+    var len = 0;
+    for (var i = 0; i < val.length; i++) {
+        var length = val.charCodeAt(i);
+        if (length >= 0 && length <= 128) {
+            len += 1;
+        } else {
+            len += 2;
+        }
+    }
+    return len;
+}
+
+/**
+ 格式化时间
+ * */
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+};

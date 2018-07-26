@@ -1,0 +1,186 @@
+.moudle-pk {
+    width: 1030px;
+    margin: 0 auto;
+}
+
+.agree {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 460px;
+    height: 207px;
+    background: rgba(0, 0, 0, 0) url(../images/con5-btn1-bg.png) center top no-repeat;
+}
+
+.agree:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0) url(../images/con5-btn1-bg.png) center bottom no-repeat;
+}
+
+.pk-logo {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 110px;
+    height: 157px;
+    background: rgba(0, 0, 0, 0) url(../images/con5-pk-bg.png) center center no-repeat;
+}
+
+.oppose {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 460px;
+    height: 207px;
+    background: rgba(0, 0, 0, 0) url(../images/con5-btn2-bg.png) center top no-repeat;
+}
+
+.oppose:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0) url(../images/con5-btn2-bg.png) center bottom no-repeat;
+}
+
+.bar {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 90%;
+    height: 16px;
+    overflow: hidden;
+    position: relative;
+    line-height: 16px;
+    border-radius: 8px;
+}
+
+.pk {
+    display: inline-block;
+    display: -moz-inline-block;
+    height: 16px;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.left {
+    width: 50%;
+    background: #e94b78 url() 0 0 no-repeat;
+
+}
+
+.right {
+    width: 50%;
+    background: #3389cc url() 0 0 no-repeat;
+}
+
+.position {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 306px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -o-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+    background: rgba(0, 0, 0, 0) url(../images/con5-rate-bg.png) 0 0 no-repeat;
+}
+
+.text {
+    display: inline-block;
+    display: -moz-inline-block;
+    width: 5%;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.motto {
+    width: 100%;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.format {
+    margin-top: 10px;
+}
+
+.moudle-sudoku {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.Sudoku {
+    background: #fff url(../image/bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.Sudoku tr td {
+    width: 200px;
+    height: 200px;
+}
+
+.Sudoku tr td:hover {
+    background: -webkit-radial-gradient(white, green, blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(white, green, blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(white, green, blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(white, green, blue); /* 标准的语法 */
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.Sudoku tr td, .Sudoku tr th {
+    border: none;
+    padding: 0;
+}
+
+#start a {
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    text-decoration: none;
+    font-size: 30px;
+    outline: none;
+    background: red;
+}
+
+#start:hover{
+    opacity: 1;
+    background: red;
+}
+
+#start a:active {
+    background: blue;
+
+}
+
+.active {
+    background: -webkit-radial-gradient(white,white, black 60%); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(white, white, black 60%); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(white, white, black 60%); /* Firefox 3.6 - 15 */
+    background: radial-gradient(white, white, black 60%); /* 标准的语法 */
+    opacity: 0.3;
+}
+
+

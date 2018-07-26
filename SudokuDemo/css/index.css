@@ -1,0 +1,59 @@
+.moudle-sudoku {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.Sudoku {
+    background: #fff url(../image/bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.Sudoku tr td {
+    width: 200px;
+    height: 200px;
+}
+
+.Sudoku tr td:hover {
+    background: -webkit-radial-gradient(white, green, blue); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(white, green, blue); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(white, green, blue); /* Firefox 3.6 - 15 */
+    background: radial-gradient(white, green, blue); /* 标准的语法 */
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.Sudoku tr td, .Sudoku tr th {
+    border: none;
+    padding: 0;
+}
+
+#start a {
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    text-decoration: none;
+    font-size: 30px;
+    outline: none;
+    background: red;
+}
+
+#start:hover{
+    opacity: 1;
+    background: red;
+}
+
+#start a:active {
+    background: blue;
+
+}
+
+.active {
+    background: -webkit-radial-gradient(white,white, black 60%); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(white, white, black 60%); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(white, white, black 60%); /* Firefox 3.6 - 15 */
+    background: radial-gradient(white, white, black 60%); /* 标准的语法 */
+    opacity: 0.3;
+}
