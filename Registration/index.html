@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>sign</title>
+    <link rel="stylesheet" type="text/css" href="ResetCss.css"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+<div id="root">
+    <div class="sign">
+        <form id="login" action="http://www.laiyangde.top/Home/Index/login" method="post">
+            <h1>综合科学技术教育<i>登录</i></h1>
+            <span>账号</span><input id="username" type="text" placeholder="your username" autocomplete="off"/><br/>
+            <span>密码</span><input id="password" type="password" placeholder="your password" autocomplete="off"/><br/>
+            <p id="status">欢迎来到网科组!</p>
+            <input id="go-login" type="button" value="登录"/>
+            <input id="to-register" type="button" value="注册"/>
+        </form>
+        <form id="register-1" style="display: none">
+            <h2>注册 第一步</h2>
+            <span>账号</span><input id="getUsername" type="text" placeholder="your username" autocomplete="off"/><br/>
+            <span>密码</span><input id="getPassword" type="password" placeholder="your password" autocomplete="off"/><br/>
+            <span>确认密码</span><input id="checkPassword" type="password" placeholder="verify password"
+                                    autocomplete="off"/><br/>
+            <p id="status1">输入你想要的账号密码以继续</p>
+            <input id="to-login" type="button" value="返回"/>
+            <input id="to-register-2" type="button" value="下一步"/>
+        </form>
+        <form id="register-2" style="display:none" action="http://www.laiyangde.top/Home/Index/register" method="post">
+            <h2>注册 第二步</h2>
+            <span>手机号</span><input id="phoneNumber" type="tel" placeholder="your phone number" autocomplete="off"/><br/>
+            <span>邮箱</span><input id="email" type="email" placeholder="your email" autocomplete="off"/><br/>
+            <p id="status2">继续完善你的信息</p>
+            <input id="to-register-1" type="button" value="上一步"/>
+            <input id="register" type="button" value="注册"/>
+        </form>
+        <h6>2017©redblue</h6>
+    </div>
+</div>
+</body>
+</html>
