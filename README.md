@@ -6,14 +6,12 @@
 
 [👍 获取更多 demo](/weblab/gao7fm)
 
-[🐷 留言板 demo](/weblab/MessageBoard)
+[🐷 留言板 demo](/weblab/messageBoard)
 
-[🙃 照片墙 demo](/weblab/PhotosWall)
+[🙃 照片墙 demo](/weblab/photoswall)
 
-[😜 PK demo](/weblab/PK)
+[😜 PK demo](/weblab/pkDemo)
 
-[👌 间旅行者 demo](/weblab/TheTime)
-
-[❤ 滑动卡片 demo](/weblab/CardSmooth)
+[👌 间旅行者 demo](/weblab/the%20time)
 
 [🎉 等待添加……](/weblab)
