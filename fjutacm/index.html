@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>中世竞创·AI对战平台</title>
     <link href="css/index.css" rel="stylesheet">
     <script src="js/jquery-1.11.1.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#tab1").click(function(){
+        $(document).ready(function () {
+            $("#tab1").click(function () {
                 $("body").animate({
-                     left:'25px',
-                    opacity:'0.1',
-                     height:'15px',
-                     width:'15px'
-                },800,function(){
-                    window.location.href="Login.jsp";
+                    left: '25px',
+                    opacity: '0.1',
+                    height: '15px',
+                    width: '15px'
+                }, 800, function () {
+                    window.location.href = "Login.jsp";
                 });
             });
-            $("#tab2").click(function(){
+            $("#tab2").click(function () {
                 $("body").animate({
-                    opacity:'0.3'
-                },800,function(){
-                    window.location.href="aigame_list.html";
+                    opacity: '0.3'
+                }, 800, function () {
+                    window.location.href = "aigame_list.html";
                 });
             });
-            $("#tab3").click(function(){
+            $("#tab3").click(function () {
                 $("body").animate({
-                    opacity:'0.1',
-                    height:'100%',
-                    width:'0'
-                },1000,function(){
-                    window.location.href="index.jsp";
+                    opacity: '0.1',
+                    height: '100%',
+                    width: '0'
+                }, 1000, function () {
+                    window.location.href = "index.jsp";
                 });
             });
         });
     </script>
 </head>
+
 <body>
-<div class="ai">
-    <img class="ai-1" src="syspic/wzq/aiman1.png" alt="中世竞创·AI对战平台"/>
-    <img class="ai-2" src="syspic/wzq/aiman2.png" alt="中世竞创·AI对战平台"/>
-    <img class="ai-2 ai-3" src="syspic/wzq/aiman21.png" alt="中世竞创·AI对战平台"/>
-</div>
-<div class="main">
-    <div class="main-title">
+    <div class="ai">
+        <img class="ai-1" src="assets/aiman1.png" alt="中世竞创·AI对战平台" />
+        <img class="ai-2" src="assets/aiman2.png" alt="中世竞创·AI对战平台" />
+        <img class="ai-2 ai-3" src="assets/aiman21.png" alt="中世竞创·AI对战平台" />
     </div>
-    <hr/>
-    <div class="title">
-        FJUT&nbsp·&nbsp欢迎来到AI对战平台
+    <div class="main">
+        <div class="main-title">
+        </div>
+        <hr />
+        <div class="title">
+            FJUT&nbsp·&nbsp欢迎来到AI对战平台
+        </div>
+        <div class="bar">
+            <ul>
+                <li>
+                    <a href="aigame_userMangeAi.jsp" id="tab1">
+                        AI个人中心
+                    </a>
+                </li>
+                <li>
+                    <a href="aigame_list.html" id="tab2">
+                        五子棋挑战赛
+                    </a>
+                </li>
+                <li>
+                    <a href="index.jsp" id="tab3">
+                        T^T Online
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="bar">
-        <ul>
-            <li>
-                <a href="aigame_userMangeAi.jsp" id="tab1">
-                    AI个人中心
-                </a>
-            </li>
-            <li>
-                <a href="aigame_list.html" id="tab2">
-                    五子棋挑战赛
-                </a>
-            </li>
-            <li>
-                <a href="index.jsp" id="tab3">
-                    T^T Online
-                </a>
-            </li>
-        </ul>
+    <div class="buttom-text">
+        建议使用1920*1080分辨率和Chrome浏览器获得最佳效果
     </div>
-</div>
-<div class="buttom-text">
-    建议使用1920*1080分辨率和Chrome浏览器获得最佳效果
-</div>
 </body>
 <canvas id="canvas" style="background:#007fff"></canvas>
 
@@ -136,4 +138,5 @@
     };
 
 </script>
+
 </html>
