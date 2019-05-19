@@ -1,175 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <style>
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        background-color: #fff;
-      }
 
-      #container {
-        width: 100vw;
-        height: 100vh;
-        perspective: 140px;
-        position: relative;
-        perspective-origin: 20px 350px;
-        transform-style: preserve-3d;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background-color: #fff;
+    }
 
-      .obj {
-        width: 120px;
-        height: 200px;
-        border-radius: 5px;
-        position: absolute;
-        transform-origin: center;
-        left: 50px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container"></div>
-    <script>
-      const container = document.getElementById("container");
-      const currZ = new Array();
-      const touchState = Object.create({
-        start: true,
-        move: true,
-        startX: 0,
-        direction: 0,
-        diffZ: 0
-      });
+    #container {
+      width: 100vw;
+      height: 100vh;
+      perspective: 140px;
+      position: relative;
+      perspective-origin: 20px 350px;
+      transform-style: preserve-3d;
+    }
 
-      const getX = z =>
-        z <= 20 ? z * 0.05 : z <= 60 ? z - 19 : 41 + (z - 60) * 5;
+    .obj {
+      width: 120px;
+      height: 200px;
+      border-radius: 5px;
+      position: absolute;
+      transform-origin: center;
+      left: 50px;
+    }
+  </style>
+</head>
 
-      for (let i = 0; i < 4; i++) {
-        const child = document.createElement("div");
-        child.classList = "obj";
-        child.style.transform =
-          "translate3d(" + getX(i * 20) + "px,250px," + i * 20 + "px)";
-        child.style.backgroundColor = "hsl(218,100%," + (100 - i * 10) + "%)";
-        currZ[i] = i * 20;
-        child.addEventListener(
-          "transitionend",
-          function(e) {
-            const z = window
-              .getComputedStyle(this)
-              .getPropertyValue("transform")
-              .split(",")[14];
-            this.style.transition = null;
+<body>
+  <div id="container"></div>
+  <script>
+    const container = document.getElementById("container");
+    const currZ = new Array();
+    const touchState = Object.create({
+      start: true,
+      move: true,
+      startX: 0,
+      direction: 0,
+      diffZ: 0
+    });
 
-            if (z == 80) {
-              this.style.transform = "translate3d(0px,250px,0px)";
-              this.style.backgroundColor = "hsl(218,100%,100%)";
-            }
-            touchState.start = true;
-          },
-          false
-        );
-        container.appendChild(child);
-      }
+    const getX = z =>
+      z <= 20 ? z * 0.05 : z <= 60 ? z - 19 : 41 + (z - 60) * 5;
 
-      const child = container.getElementsByClassName("obj");
+    for (let i = 0; i < 4; i++) {
+      const child = document.createElement("div");
+      child.classList = "obj";
+      child.style.transform =
+        "translate3d(" + getX(i * 20) + "px,250px," + i * 20 + "px)";
+      child.style.backgroundColor = "hsl(218,100%," + (100 - i * 10) + "%)";
+      currZ[i] = i * 20;
+      child.addEventListener(
+        "transitionend",
+        function (e) {
+          e.preventDefault();
+          const z = window
+            .getComputedStyle(this)
+            .getPropertyValue("transform")
+            .split(",")[14];
+          this.style.transition = null;
 
-      const touchStart = function(e) {
-        if (!touchState.start) return;
-
-        touchState.startX = e.touches[0].pageX;
-        touchState.direction = 0;
-        touchState.diffZ = 0;
-        touchState.move = true;
-
-        this.addEventListener("touchmove", touchMove, false);
-        this.addEventListener("touchend", touchEnd, false);
-        this.addEventListener("touchcancel", touchEnd, false);
-      };
-
-      const touchMove = function(e) {
-        touchState.start = false;
-        requestAnimationFrame(() => {
-          if (!touchState.move) {
-            touchState.start = true;
-            this.removeEventListener("touchend", touchEnd, false);
-            this.removeEventListener("touchcancel", touchEnd, false);
-            this.removeEventListener("touchmove", touchMove, false);
-            return;
+          if (z == 80) {
+            this.style.transform = "translate3d(0px,250px,0px)";
+            this.style.backgroundColor = "hsl(218,100%,100%)";
           }
+          touchState.start = true;
+        },
+        false
+      );
+      container.appendChild(child);
+    }
 
-          touchState.direction =
-            e.changedTouches[0].pageX > touchState.startX ? 1 : -1;
+    const child = container.getElementsByClassName("obj");
 
-          touchState.diffZ += touchState.direction * 0.5;
+    const touchStart = function (e) {
+      e.preventDefault();
+      if (!touchState.start) return;
 
-          for (const i in child) {
-            if (child.hasOwnProperty(i)) {
-              const el = child[i];
-              let newZ = currZ[i] + touchState.diffZ;
-              if (touchState.diffZ == touchState.direction * 20) {
-                newZ = newZ == 80 ? 0 : newZ;
-                newZ = newZ == -20 ? 60 : newZ;
-                currZ[i] = newZ;
-                touchState.move = false;
-              }
-              newZ = newZ < 0 ? 80 + newZ : newZ;
+      touchState.startX = e.touches[0].pageX;
+      touchState.direction = 0;
+      touchState.diffZ = 0;
+      touchState.move = true;
 
-              el.style.transform =
-                "translate3d(" + getX(newZ) + "px,250px," + newZ + "px)";
-              el.style.backgroundColor =
-                "hsl(218,100%," + (100 - newZ * 0.5) + "%)";
-            }
-          }
+      this.addEventListener("touchmove", touchMove, false);
+      this.addEventListener("touchend", touchEnd, false);
+      this.addEventListener("touchcancel", touchEnd, false);
+    };
 
-          touchState.startX = e.changedTouches[0].pageX;
-        });
-      };
-
-      const touchEnd = function(e) {
-        touchState.move = false;
-        if (touchState.diffZ == 0) return;
-
-        if (touchState.diffZ < 0) {
-          touchState.diffZ = -touchState.diffZ;
-          touchState.direction = -1;
-        } else {
-          touchState.direction = 1;
+    const touchMove = function (e) {
+      e.preventDefault();
+      touchState.start = false;
+      requestAnimationFrame(() => {
+        if (!touchState.move) {
+          touchState.start = true;
+          this.removeEventListener("touchend", touchEnd, false);
+          this.removeEventListener("touchcancel", touchEnd, false);
+          this.removeEventListener("touchmove", touchMove, false);
+          return;
         }
 
-        const isReset = touchState.diffZ >= 12 ? false : true;
+        touchState.direction =
+          e.changedTouches[0].pageX > touchState.startX ? 1 : -1;
+
+        touchState.diffZ += touchState.direction * 0.5;
 
         for (const i in child) {
           if (child.hasOwnProperty(i)) {
             const el = child[i];
-
-            if (isReset) {
-              currZ[i] =
-                currZ[i] == 0 && touchState.direction < 0 ? 80 : currZ[i];
-
-              el.style.transition =
-                "all " + 0.05 * touchState.diffZ + "s ease-in-out";
-            } else {
-              currZ[i] += touchState.direction * 20;
-              currZ[i] = currZ[i] < 0 ? 60 : currZ[i];
-              el.style.transition =
-                "all " + 0.05 * (20 - touchState.diffZ) + "s ease-in-out";
+            let newZ = currZ[i] + touchState.diffZ;
+            if (touchState.diffZ == touchState.direction * 20) {
+              newZ = newZ == 80 ? 0 : newZ;
+              newZ = newZ == -20 ? 60 : newZ;
+              currZ[i] = newZ;
+              touchState.move = false;
             }
+            newZ = newZ < 0 ? 80 + newZ : newZ;
 
             el.style.transform =
-              "translate3d(" + getX(currZ[i]) + "px,250px," + currZ[i] + "px)";
+              "translate3d(" + getX(newZ) + "px,250px," + newZ + "px)";
             el.style.backgroundColor =
-              "hsl(218,100%," + (100 - currZ[i] * 0.5) + "%)";
-            if (currZ[i] == 80) currZ[i] = 0;
+              "hsl(218,100%," + (100 - newZ * 0.5) + "%)";
           }
         }
-      };
 
-      container.addEventListener("touchstart", touchStart, false);
-    </script>
-  </body>
+        touchState.startX = e.changedTouches[0].pageX;
+      });
+    };
+
+    const touchEnd = function (e) {
+      e.preventDefault();
+      touchState.move = false;
+      if (touchState.diffZ == 0) return;
+
+      if (touchState.diffZ < 0) {
+        touchState.diffZ = -touchState.diffZ;
+        touchState.direction = -1;
+      } else {
+        touchState.direction = 1;
+      }
+
+      const isReset = touchState.diffZ >= 12 ? false : true;
+
+      for (const i in child) {
+        if (child.hasOwnProperty(i)) {
+          const el = child[i];
+
+          if (isReset) {
+            currZ[i] =
+              currZ[i] == 0 && touchState.direction < 0 ? 80 : currZ[i];
+
+            el.style.transition =
+              "all " + 0.05 * touchState.diffZ + "s ease-in-out";
+          } else {
+            currZ[i] += touchState.direction * 20;
+            currZ[i] = currZ[i] < 0 ? 60 : currZ[i];
+            el.style.transition =
+              "all " + 0.05 * (20 - touchState.diffZ) + "s ease-in-out";
+          }
+
+          el.style.transform =
+            "translate3d(" + getX(currZ[i]) + "px,250px," + currZ[i] + "px)";
+          el.style.backgroundColor =
+            "hsl(218,100%," + (100 - currZ[i] * 0.5) + "%)";
+          if (currZ[i] == 80) currZ[i] = 0;
+        }
+      }
+    };
+
+    container.addEventListener("touchstart", touchStart, false);
+  </script>
+</body>
+
 </html>
