@@ -1,19 +1,19 @@
 # ✨ List of All Projects
 
-[😜 注册 demo](/weblab/Registration)
+[😜 注册 demo](/WebLab/Registration)
 
-[😘 抽奖 demo](/weblab/SudokuDemo)
+[😘 抽奖 demo](/WebLab/SudokuDemo)
 
-[👍 获取更多 demo](/weblab/gao7fm)
+[👍 获取更多 demo](/WebLab/gao7fm)
 
-[🐷 留言板 demo](/weblab/MessageBoard)
+[🐷 留言板 demo](/WebLab/MessageBoard)
 
-[🙃 照片墙 demo](/weblab/PhotosWall)
+[🙃 照片墙 demo](/WebLab/PhotosWall)
 
-[😜 PK demo](/weblab/PK)
+[😜 PK demo](/WebLab/PK)
 
-[👌 间旅行者 demo](/weblab/TheTime)
+[👌 间旅行者 demo](/WebLab/TheTime)
 
-[❤ 滑动卡片 demo](/weblab/CardSmooth)
+[❤ 滑动卡片 demo](/WebLab/CardSmooth)
 
-[🎉 等待添加……](/weblab)
+[🎉 等待添加……](/WebLab)
