@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/page3.css" rel="stylesheet"/>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("body").animate({
+                    opacity:'0.1',
+                    height:'100%',
+                    width:'0'
+                },1000,function(){
+                    window.location.href="index.html";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="page-3">
+    <div class="back"><button>回到主页</button></div>
+    <img class="logo" src="img/zsjc.png" alt="中世竞创·AI对战平台"/>
+    <div class="page-title">
+        <h1>AI：<span>AlphaGo</span></h1>
+        <i></i>
+        <h2>作者：<span>DeepMind</span></h2>
+    </div>
+    <div class="page-content-2">
+        <div class="return return-1"><a href="javascript:void(0);" target="_blank">上一个</a></div>
+        <img class="content-bg" src="img/quan.png" alt="中世竞创·AI对战平台"/>
+        <div class="text-area">
+            阿尔法围棋（AlphaGo）是通过两个不同神经网络“大脑”合作来改进下棋。这些“大脑”是多层神经网络，跟那些Google图片搜索引擎识别图片在结构上是相似的。它们从多层启发式二维过滤器开始，去处理围棋棋盘的定位，就像图片分类器网络处理图片一样。经过过滤，13个完全连接的神经网络层产生对它们看到的局面判断。这些层能够做分类和逻辑推理。阿尔法围棋（AlphaGo）是通过两个不同神经网络“大脑”合作来改进下棋。这些“大脑”是多层神经网络，跟那些Google图片搜索引擎识别图片在结构上是相似的。它们从多层启发式二维过滤器开始，去处理围棋棋盘的定位，就像图片分类器网络处理图片一样。经过过滤，13个完全连接的神经网络层产生对它们看到的局面判断。这些层能够做分类和逻辑推理。
+        </div>
+        <div class="return next-1"><a href="javascript:void(0);" target="_blank">下一个</a></div>
+        <div class="pk">
+            <div class="vs">VS</div>
+            <div class="pk-1">
+                Win
+                <div class="pk-data"><span style="display:block;background-color: #f00;width:20%;height: 100%;"></span>
+                </div>
+            </div>
+            <div class="pk-1">
+                Lose
+                <div class="pk-data"><span></span></div>
+            </div>
+        </div>
+        <div class="come">
+            <a href="javascript:void(0);" target="_blank">挑战</a>
+        </div>
+    </div>
+    <div class="return return-2">
+        <a href="javascript:void(0);" target="_blank">返回</a>
+    </div>
+</div>
+</body>
+</html>

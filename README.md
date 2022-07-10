@@ -16,4 +16,6 @@
 
 [❤ 滑动卡片 demo](/CardSmooth)
 
+[❤ AI 五子棋挑战赛 demo](/wzq)
+
 [🎉 等待添加……]()

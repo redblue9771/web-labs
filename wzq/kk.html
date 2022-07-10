@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="qq" style="background:#98bf21;height:100px;width:100px;position:absolute;"><a href="javascript:;" id="tab1">顶部</a></div>
+<a href="javascript:;" id="tab2">中部</a>
+...<p>持续添加直到出现滚动条</p>...<button>开始动画</button>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+</body>
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#tab1").click(function(){
+            $(".qq").animate({
+                left:'250px',
+                opacity:'0.6',
+                height:'15px',
+                width:'15px'
+            });
+        });
+        $("#tab2").click(function(){
+            $("html,body").animate({scrollTop:'600px'},300);
+        });
+        $("button").click(function(){
+            $("div").animate({
+                left:'250px',
+                opacity:'0.5',
+                height:'150px',
+                width:'150px'
+            });
+        });
+    });
+</script>
+</html>

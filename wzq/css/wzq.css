@@ -1,0 +1,113 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #007fff;
+    overflow: hidden;
+}
+
+.wzq {
+    position: absolute;
+    top: 270px;
+    left: 320px;
+    z-index: 50;
+}
+
+.row {
+    float: left;
+    width: 100%;
+}
+
+.block {
+    float: left;
+    width: 30px;
+    height: 30px;
+    /*background-color: #ff0;*/
+    margin: 1px;
+    /*border: solid 1px;*/
+    cursor: pointer;
+}
+
+.wzq table {
+    border-collapse: collapse;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: -1;
+}
+
+.wzq table td {
+    border: solid 1px;
+}
+
+.wzq table td div {
+    width: 29px;
+    height: 29px;
+}
+
+.white {
+    float: left;
+    width: 30px;
+    height: 30px;
+    /*background-color: #ff0;*/
+    margin: 1px;
+    /*border: solid 1px;*/
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: #fff;
+/ / border: solid 1 px;
+    background: -webkit-radial-gradient(30% 25%, circle closest-corner, #eee, #bbb);
+}
+
+.black {
+    float: left;
+    width: 30px;
+    height: 30px;
+    /*background-color: #ff0;*/
+    margin: 1px;
+    /*border: solid 1px;*/
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: #000;
+/ / border: solid 1 px;
+    background: -webkit-radial-gradient(30% 25%, circle closest-corner, #777, #222);
+}
+
+.block:hover {
+    /*border-radius: 100%;*/
+    /*background-color: #000;*/
+    border: solid 1px #f00;
+    width: 28px;
+    height: 28px;
+}
+
+.back-ai {
+    width: auto;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 1080px;
+}
+
+.boder-1{
+    position: absolute;
+    top: -25px;
+    left: -50px;
+}
+
+
+.boder-2{
+    width:auto;
+    height: 170px;
+    position: absolute;
+    top: 700px;
+    left: 725px;
+}
+
+h1{
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    top: 180px;
+    left: 210px;
+    font-weight: normal;
+}

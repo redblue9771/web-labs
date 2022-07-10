@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/page2.css" rel="stylesheet"/>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("body").animate({
+                    left:'25px',
+                    opacity:'0.1',
+                    height:'15px',
+                    width:'15px'
+                },500,function(){
+                    window.location.href="index.html";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="page-2">
+    <div class="back"><button>回到主页</button></div>
+    <img class="logo" src="img/zsjc.png" alt="中世竞创·AI对战平台"/>
+    <div class="page-title">
+            <h1>AI排行榜</h1>
+        <i></i>
+            <h2>膜拜各位大佬吧</h2>
+    </div>
+    <div class="page-content-1">
+        <ul>
+            <li><h2>T^T哔哩哔哩</h2><i></i><span><div></div></span></li>
+            <li><h2>AlphaGo</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+            <li><h2>这里最多11个字哟你看嘛多的字</h2><i></i><span><div></div></span></li>
+        </ul>
+    </div>
+    <div class="next"><img src="img/go.png" alt="中世竞创·AI对战平台"/><a href="javascript:void(0);" target="_blank">详细了解并选择一个你要挑战的</a>
+    </div>
+</div>
+</body>
+</html>
